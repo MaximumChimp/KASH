@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&display=swap');
-
+  
 
 body, html {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
-
+    overflow: hidden;   
+    background:conic-gradient(from 45deg, #edf3f9,#fdf7fb,#f6ffff, #f8f9ff, #edf3f9);
 }
 
 #preloader {
@@ -22,21 +22,20 @@ body, html {
     left: 0;
     z-index: 1000;
     background-color:  #fff;
-    font-family:Arial, Helvetica, sans-serif;
-}
+}   
 
 .loader-container {
     text-align: center;
 }
 
 .loader-text {
-    font-size: 3rem;
-    font-family: "Changa One", sans-serif;
+    font-size: 2.5rem;
     font-weight: 400;
     font-style: normal;
     color: #333;
     position: relative;
     letter-spacing: 3.5;
+    font-family: "Changa One", sans-serif !important;
 }
 
 .combine {
@@ -46,9 +45,9 @@ body, html {
 
 .highlight {
     color: rgb(235, 235, 6);
-    font-family: "Changa One", sans-serif;
     font-weight: 400;
     font-style: normal;
+    
 }
 
 .blink {
@@ -56,9 +55,10 @@ body, html {
 }
 
 .loader-subtitle {
-    font-size: 1.2rem; /* Adjusted font size */
+    font-size: 1rem; /* Adjusted font size */
     color: #000000;
     margin-top: 0px;
+    font-family: Arial, Helvetica, sans-serif !important;
 }
 
 

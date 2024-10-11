@@ -10,6 +10,7 @@ $(document).ready(function() {
       $navMenu.toggleClass("active");
   }
 
+
   // Function to close the menu
   function closeMenu() {
       $hamburger.removeClass("active");
@@ -20,7 +21,12 @@ $(document).ready(function() {
   $hamburger.on("click", mobileMenu);
   $navLink.on("click", closeMenu);
 
-  
+  $('.tablinks').click(function() {
+    $('.tablinks').removeClass('active');
+    $(this).addClass('active');
+  });
+
+
   var today = new Date();
 
   // Define arrays for month names and day names
@@ -79,8 +85,10 @@ $(document).ready(function() {
                 // Append dayblock to the week div
                 $weekDiv.append($dayblock);
             }
-            
-function openCity(evt, cityName) {
+            const ctx = document.getElementById('myDoughnutChart').getContext('2d');
+
+    
+function openContent(evt, cityName) {
     // Hide all elements with class="tabcontent"
     $(".tabcontent").hide();
 
@@ -91,14 +99,77 @@ function openCity(evt, cityName) {
     // Show the current tab, and add an "active" class to the link that opened the tab
     $("#" + cityName).show();
     $(evt.currentTarget).addClass("active");
-}
+}   
 
     // Attach click event to tab links
    
     $(".tablinks").click(function(evt) {
         var cityName = $(this).data("content");
-        openCity(evt, cityName);
+        openContent(evt, cityName);
     });
     
+
+// Example data values for each category
+
+
+const dataValues = [30, 150, 1];
+const total = dataValues.reduce((a, b) => a + b, 0);
+const percentage = Math.round((dataValues[0] / total) * 100); // Percentage for "Solved"
+
+const myDoughnutChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+        labels: ['Solved Tickets', 'Pending Tickets', 'Unsolved Tickets'],
+        datasets: [{
+            data: dataValues,
+            backgroundColor: [
+                '#2ed47a', // Color for Solved
+                '#ffb946', // Color for Pending
+                '#f7685b'  // Color for Unsolved
+            ],
+            borderColor: [
+                '#2ed47a', // Color for Solved
+                '#ffb946', // Color for Pending
+                '#f7685b'  // Color for Unsolved
+            ],
+            borderWidth: 2, // Border width for segments
+            borderRadius: 10 // Set the border radius for rounded ends
+        }]
+    },
+    options: {
+        responsive: true,
+        cutout: '95%', // Adjust this value to make the doughnut thinner
+        plugins: {
+            legend: {
+                position: 'right',
+                labels: {
+                    boxWidth: 20
+                }
+            },
+            tooltip: {
+                enabled: true // Disable tooltips if not needed
+            }
+        }
+    },
+    plugins: [{
+        beforeDraw: function(chart) {
+            const width = chart.width,
+                  height = chart.height,
+                  ctx = chart.ctx;
+
+            ctx.restore();
+            const fontSize = (height / 200).toFixed(2); // Dynamic font size
+            ctx.font = fontSize + "em sans-serif";
+            ctx.textBaseline = "middle";
+            ctx.textAlign = "center";
+            const text = percentage + "%"; // Text to display
+            const textX = Math.round((width - ctx.measureText(text).width) / 2);
+            const textY = height / 2;
+
+            ctx.fillText(text, textX, textY);
+            ctx.save();
+        }
+    }]
+});
 });
 
