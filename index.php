@@ -164,10 +164,7 @@
                         <span class="nav-label">Settings</span>
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <li class="drop"><a class="dropdown-item" href="#"><i class="fa-regular fa-pen-to-square task-icon"></i> Edit</a></li>
-                        <li class="drop"><a class="dropdown-item delete-btn" href="#" onclick="deleteTask('${taskId}')"><i class="fa-solid fa-trash task-icon"></i> Delete</a></li>
-                        <li class="drop"><a class="dropdown-item" href="#"><i class="fa-solid fa-user-plus task-icon"></i> Add People</a></li>
-                        <li class="drop"><a class="dropdown-item" href="./logout.php"><i class="fa-solid fa-arrow-right-from-bracket task-icon"></i> Leave</a></li>
+                        <li class="drop"><a class="dropdown-item" href="./logout.php"><i class="fa-solid fa-arrow-right-from-bracket task-icon"></i> Logout</a></li>
                     </ul>
                 </div>
               </div>

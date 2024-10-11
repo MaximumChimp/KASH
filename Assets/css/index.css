@@ -119,13 +119,18 @@ img {
   text-align: center;
   text-decoration: none;
   margin: 30px;
-  border: 1px solid #007bff;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 #integration a img{
   width: 80px;
   height: 80px;
   object-fit: contain;
+}
+
+#integration a:hover{
+  background-color: #c0bdbd;
 }
 
 /* first block style */
