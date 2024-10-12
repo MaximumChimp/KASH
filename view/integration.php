@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col">
-                    <a href="http://192.168.0.158/KERP/init/login.php"  target="_blank">
+                    <a href=""  target="_blank" id="KERP">
                         <img src="./Assets/image/Logo.png" alt="">
                         <span>KERP</span>
                     </a>

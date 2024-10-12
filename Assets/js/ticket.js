@@ -111,10 +111,14 @@ $(document).ready(function() {
             'aria-label': 'Close',
             click: function() {
                 removeTab(tabId);
-                $("#pill-allunsolved .tab-pane").addClass("active");
+              
+                // $("#pills-allunsolved-tab").addClass("active");
+                // $("#pills-allunsolved .tab-pane").addClass('active');
+                $("#pills-allunsolved .tab-pane").addClass("active");
             }
+            
         });
-
+    
         newTabButton.append(closeButton);
         newTab.append(newTabButton);
         $('.tab-action').before(newTab);
@@ -132,7 +136,6 @@ $(document).ready(function() {
         if (setActive) {
             setActiveTab(tabId);
         }
-
         storeTabsInLocalStorage();
         initializeQuillEditors();
         RequesterSelect('#' + tabId + '-content #requester');

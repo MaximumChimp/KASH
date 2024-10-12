@@ -130,7 +130,12 @@ img {
 }
 
 #integration a:hover{
-  background-color: #c0bdbd;
+  backdrop-filter: blur(5px);
+  box-shadow: 4px 4px 60px rgba(0,0,0,0.2);
+  transform:scale(1.1);
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  transition: all .5s;
 }
 
 /* first block style */
@@ -503,6 +508,11 @@ li a{
   display: flex;
   align-items: center;
 }
+
+.menu-icon i{
+  color: rgb(158, 158, 158);
+}
+
 .nav-label {
   margin-left: 14px;
   font-weight: var(--fWeight500);
